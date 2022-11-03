@@ -1,0 +1,8 @@
+# Set Azure Subscription
+az account set -s "Azure subscription 1"
+# Create resource group
+az group create -l uksouth -n "tfstate_rg"
+# Create storage account
+az storage account create -l "uksouth" -n "tfstatewepage" -g "tfstate_rg" --sku "Standard_LRS" --kind "StorageV2"
+# Create blob container
+az storage container create --account-name "tfstatewepage" --name "state"

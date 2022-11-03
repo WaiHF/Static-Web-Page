@@ -12,7 +12,7 @@ terraform {
   cloud {
     organization = "WaiHF"
     workspaces {
-      name = "static-web-page"
+      name = var.name
     }
   }
 }
@@ -22,13 +22,15 @@ provider "azurerm" {
   features {}
 }
 
+# Resource group.
 resource "azurerm_resource_group" "rg" {
-  name     = "staticpage_rg"
-  location = "eastus"
+  name     = format(var.name, "_rg")
+  location = var.location
 }
 
+# Static site app.
 resource "azurerm_static_site" "web" {
-  name = "staticpage"
-  resource_group_name = azurerm_resource_group.rg.name
-  location = "eastus"
+  name                = var.name
+  resource_group_name = format(var.name, "_rg")
+  location            = var.location
 }

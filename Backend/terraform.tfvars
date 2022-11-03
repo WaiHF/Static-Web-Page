@@ -1,3 +1,3 @@
 # Declaration of variable values.
-name     = "static-web-page"
-location = "eastus"
+name     = "static_web_page"
+location = "west europe"

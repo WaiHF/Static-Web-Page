@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ERD Tool</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>ERD Tool</h1>
+    </header>
+
+    <div id="main_menu">
+        <a id="save_button" href="#">Save Graph</a>
+        <a id="load_button" href="#">Load Graph</a>
+        <a id="clear_button" href="#">Clear Graph</a>
+    </div>
+
+    <aside>
+        <div id="item_menu">
+        </div>
+    </aside>
+
+    <main>
+        <canvas id="canvas" contenteditable="true"></canvas>
+
+        <div id="property_menu" style="width: 0%; max-width: 350px">
+            <a id="property_menu_close_button" class="button">&times;</a>
+        </div>
+    </main>
+
+    <script src="js/PropertyMenu.js"></script>
+    <script src="js/Graph.js"></script>
+    <script src="js/Canvas.js"></script>
+    <script src="js/Node.js"></script>
+    <script src="js/Link.js"></script>
+    <script src="js/Main.js"></script>
+</body>
+
+</html>

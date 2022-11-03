@@ -1,0 +1,291 @@
+html {
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Sans-serif;
+    background-color: #0A1E36;
+}
+
+header {
+    background-color: #0A1E36;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 1vh;
+}
+
+#main_menu {
+    background-color: #F1F6FC;
+    border-bottom: solid;
+    border-color: #283747;
+    margin: 0px;
+    padding: 0px;
+}
+
+#main_menu a {
+    display: inline-block;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #303030;
+    transition: 0.1s;
+}
+
+#main_menu a:hover {
+    color: #e8e8e8;
+    background-color: #0A1E36;
+}
+
+aside {
+    background-color: #e8e8e8;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #f8f8f8;
+    /** Used to hide editing cursor and caret created by contenteditable **/
+    cursor: default;
+    caret-color: transparent;
+}
+
+#item_menu {
+    user-select: none;
+}
+
+#item_menu .category {
+    width: calc(100% - 10px);
+    margin: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #0A1E36;
+}
+
+#item_menu .category_title_div {
+    cursor: pointer;
+    border: 1px solid #0A1E36;
+}
+
+#item_menu .category_title {
+    display: inline-block;
+    width: calc(100% - 28px);
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+    color: #0A1E36;
+    text-align: center;
+}
+
+/** Arrows Ref: https://css-tricks.com/snippets/css/css-triangle/ **/
+#item_menu .category_arrow_down {
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 2px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #0A1E36;
+}
+
+#item_menu .category_arrow_up {
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 2px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #0A1E36;
+}
+
+#item_menu .container {
+    display: block;
+    border: 1px solid #0A1E36;
+}
+
+#item_menu .item[draggable] {
+    width: 40%;
+    padding: 6px;
+    margin: 2px;
+    cursor: move;
+}
+
+#item_menu .item:hover {
+    padding: 4px;
+    border: 2px solid #0A1E36;
+}
+
+/* The side navigation menu. Ref: https://www.w3schools.com/howto/howto_js_sidenav.asp */
+#property_menu {
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    margin-bottom: 1000px;
+    top: 0;
+    right: 0;
+    background-color: #e8e8e8;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    transition: 0.1s;
+}
+
+#property_menu input,
+select {
+    font-size: 0.75em;
+    height: 2em;
+    border: 1px #0A1E36 solid;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#property_menu_close_button {
+    position: relative;
+    float: right;
+    padding: 5px;
+    margin-right: 5%;
+    margin-top: 15px;
+    font-size: 36px;
+}
+
+#property_menu .button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #303030;
+    transition: 0.1s;
+}
+
+#property_menu .button:hover {
+    color: #e5e5e5;
+    background-color: #0A1E36;
+}
+
+#property_menu .disabled_button {
+    position: relative;
+    display: inline-block;
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: #e5e5e5;
+}
+
+/* Format for relation text vertical toggle switch. Ref: https://www.w3schools.com/howto/howto_css_switch.asp */
+#property_menu .rel_vert_pos_label {
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+    width: 17px;
+    height: 26px;
+}
+
+#property_menu .rel_vert_pos_label .rel_vert_pos_input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#property_menu .rel_vert_pos_span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #e5e5e5;
+    border: 1px solid #0A1E36;
+
+    border-radius: 5px;
+
+    transition: .2s;
+}
+
+#property_menu .rel_vert_pos_span:before {
+    position: absolute;
+    content: "";
+    height: 0px;
+    width: 0px;
+    top: 1px;
+
+    border-radius: 50%;
+
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 0px solid #0A1E36;
+    border-bottom: 12px solid #0A1E36;
+
+    transition: .2s;
+}
+
+#property_menu .rel_vert_pos_input:checked + .rel_vert_pos_span:before {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #0A1E36;
+    border-bottom: 0px solid #0A1E36;
+
+    transform: translateY(10px);
+}
+
+/* Format for relation text horizontal slider. Ref: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+#property_menu .rel_horz_pos_input {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 29px);
+    height: 5px;
+    margin-top: 16px;
+    margin-left: 10px;
+    outline: none;
+    background: #d3d3d3;
+    border-radius: 10px;
+}
+
+#property_menu .rel_horz_pos_input::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background: #0A1E36;
+    border-radius: 20px;
+}
+
+/* Grid Layout Rules */
+header {
+    grid-area: 1 / 1 / 1 / 3;
+}
+
+#main_menu {
+    grid-area: 2 / 2 / 2 / 3;
+}
+
+aside {
+    grid-area: 3 / 1 / 3 / 1;
+}
+
+main {
+    grid-area: 3 / 2 / 3 / 2;
+}
+
+body {
+    display: grid;
+    grid-template-rows: minmax(50px, 6%) minmax(30px, 2%) minmax(400px, 92%);
+    grid-template-columns: minmax(200px, 10%) minmax(600px, 90%);
+    grid-gap: 0px 0px;
+}

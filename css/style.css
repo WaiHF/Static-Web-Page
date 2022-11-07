@@ -31,14 +31,24 @@ main {
     background-color: #f8f8f8;
 }
 
-main canvas {
+#canvasContainer canvas {
     position: absolute;
     height: 100%;
     width: 100%;
-    margin: 0px;
-    padding: 0px;
-    
+
     /** Used to hide editing cursor and caret created by contenteditable **/
     cursor: default;
     caret-color: transparent;
 }
+
+#canvasContainer #background {
+    z-index: 1;
+} 
+
+#canvasContainer #forground {
+    z-index: 2;
+} 
+
+#canvasContainer #interaction {
+    z-index: 3;
+} 

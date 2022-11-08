@@ -45,10 +45,10 @@ main {
     z-index: 1;
 } 
 
-#canvasContainer #forground {
+#canvasContainer #foreground {
     z-index: 2;
 } 
 
-#canvasContainer #interaction {
+#canvasContainer #interact {
     z-index: 3;
 } 

@@ -2,3 +2,4 @@ Backend/.terraform.lock.hcl
 Backend/.terraform/providers/registry.terraform.io/hashicorp/azurerm/3.29.1/linux_amd64/terraform-provider-azurerm_v3.29.1_x5
 Backend/.terraform/terraform.tfstate
 Backend/.terraform/environment
+js/panzoom.js

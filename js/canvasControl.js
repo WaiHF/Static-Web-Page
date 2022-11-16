@@ -11,15 +11,42 @@ class CanvasControl {
         // TESTING.
         this.#toggle = true;
 
-        // When the window is resized / zoomed in and out all canvases must be resized.
-        window.addEventListener('resize', () => this.resizeAll(), false);
+        // When the window is resized / zoomed in and out, all canvases must be resized.
+        // needs to be improved, but just testing at the moment.
+        window.addEventListener('resize', () => this.resizeAll());
+
         // TESTING.
-        window.addEventListener('click', () => this.startStopAni(), false);
-        this.startStopAni();
+        this.#layers[2].getCanvas().addEventListener('click', () => this.toggleAnimate());
+        this.toggleAnimate();
+
+        this.#layers[2].getCanvas().addEventListener('mousedown', (e) => this.onMouseDown(e))
+        this.#layers[2].getCanvas().addEventListener('mouseup', (e) => this.onMouseUp(e))
+        this.#layers[2].getCanvas().addEventListener('mousemove', (e) => this.onMouseMove(e))
+        this.#layers[2].getCanvas().addEventListener('wheel', (e) => this.onWheel(e))
+    }
+
+    onMouseDown(e) {
+
+    }
+
+    onMouseUp(e) {
+
+    }
+
+    onMouseMove(e) {
+
+    }
+
+    onWheel(e) {
+        let zoomAmount = e.deltaY * this.#layers[2].getZoomSens().toFixed(4);
+
+        for (let l of this.#layers) {
+            l.setZoom(l.getZoom() + zoomAmount);
+        }
     }
 
     // TESTING.
-    startStopAni() {
+    toggleAnimate() {
         if (this.#toggle) {
             for (let l of this.#layers) {
                 l.startAnimation();
@@ -40,4 +67,3 @@ class CanvasControl {
         }
     }
 }
-

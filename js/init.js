@@ -23,6 +23,7 @@ function randomColour() {
     return code;
 }
 
+// generates random coordinates based on max canvas x and y.
 function randomCoords(maxX, maxY) {
     let x = maxX ? Math.floor(Math.random() * maxX) : 0;
     let y = maxY ? Math.floor(Math.random() * maxY) : 0;
